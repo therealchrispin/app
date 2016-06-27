@@ -61,7 +61,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
     }
 
     private void requestNewIntersitial(){
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+        AdRequest adRequest = new AdRequest.Builder().build();
 
         mInterstitialAd.loadAd(adRequest);
 
@@ -402,12 +402,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
             }
             startTraining();
         } else {
-
-            if(mInterstitialAd.isLoaded()){
-                mInterstitialAd.show();
-            }else {
-                goToStart();
-            }
+            mInterstitialAd.show();
         }
     }
 
