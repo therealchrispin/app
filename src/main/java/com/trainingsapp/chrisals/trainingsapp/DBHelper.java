@@ -3,9 +3,6 @@ package com.trainingsapp.chrisals.trainingsapp;
 import android.provider.BaseColumns;
 
 
-/**
- * Created by chris.als on 27.04.16.
- */
 public final class DBHelper {
     public static final String TEXT_TYPE = " TEXT";
     public static final String CREATE_ENTRY = "CREATE TABLE " +

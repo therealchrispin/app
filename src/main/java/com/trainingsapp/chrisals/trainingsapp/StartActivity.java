@@ -404,7 +404,7 @@ public class StartActivity extends AppCompatActivity {
 
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("Please enter a valid weight");
+            builder.setMessage("Please enter a VALID weight");
             builder.setCancelable(true);
 
 
