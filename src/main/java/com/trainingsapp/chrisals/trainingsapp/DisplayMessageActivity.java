@@ -1,5 +1,6 @@
 package com.trainingsapp.chrisals.trainingsapp;
 
+import android.bluetooth.BluetoothClass;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -13,11 +14,18 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 public class DisplayMessageActivity extends AppCompatActivity {
     Double[] extraMessageDoubleArray = new Double[3];
     int index = 0;
     boolean[] exes = new boolean[3];
     Intent intent = getIntent();
+
+    InterstitialAd mInterstitialAd;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +44,28 @@ public class DisplayMessageActivity extends AppCompatActivity {
         });
 
 
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getResources().getString(R.string.banner_ad_unit_id));
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                requestNewIntersitial();
+                goToStart();
+            }
+        });
+
+        requestNewIntersitial();
         startTraining();
+    }
+
+    private void requestNewIntersitial(){
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+
+        mInterstitialAd.loadAd(adRequest);
+
+
     }
 
 
@@ -373,21 +402,28 @@ public class DisplayMessageActivity extends AppCompatActivity {
             }
             startTraining();
         } else {
-            Intent intent = new Intent(this, StartActivity.class);
 
-            SQLiteDatabase db = getDB();
-
-            ContentValues values = values();
-
-            long newRow;
-            newRow = db.insert(DBHelper.Datenbank.TABLE_NAME, null, values);
-            exes = new boolean[exes.length];
-            startActivity(intent);
-
-
+            if(mInterstitialAd.isLoaded()){
+                mInterstitialAd.show();
+            }else {
+                goToStart();
+            }
         }
+    }
 
 
+
+    public void goToStart(){
+        Intent intent = new Intent(this, StartActivity.class);
+
+        SQLiteDatabase db = getDB();
+
+        ContentValues values = values();
+
+        long newRow;
+        newRow = db.insert(DBHelper.Datenbank.TABLE_NAME, null, values);
+        exes = new boolean[exes.length];
+        startActivity(intent);
     }
 
     public void prepareWarmUp(View view) {
