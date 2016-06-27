@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Do You Even Lift</string>
+    <string name="action_settings">Settings</string>
+    <string name="edit_message">Enter a Number</string>
+    <string name="button_send">Send</string>
+
+    <string name="title_activity_display_message">3 x 5</string>
+    <string name="title_activity_start">Do you even lift ?</string>
+
+    <string name="reset">Reset</string>
+
+    <string-array name="Exercises">
+        <item>Squat</item>
+        <item>Bench</item>
+        <item>Overheadpress</item>
+        <item>Deadlift</item>
+    </string-array>
+
+    <string name="title_activity_tutorial_view_pager"></string>
+
+
+</resources>

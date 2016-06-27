@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "27087090048",
+    "firebase_url": "https://dyel-project.firebaseio.com",
+    "project_id": "dyel-project",
+    "storage_bucket": "dyel-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27087090048:android:bd08b8d77b37ebdf",
+        "android_client_info": {
+          "package_name": "com.trainingsapp.chrisals.trainingsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "27087090048-kb1qvmvstuihfpu0b48jvvn30s2ou13q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBm77obCPv8Uw-jY0Hq7Hha_TzoxtdhHNY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
