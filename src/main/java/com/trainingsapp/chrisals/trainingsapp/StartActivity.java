@@ -3,30 +3,18 @@ package com.trainingsapp.chrisals.trainingsapp;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.transition.Fade;
-import android.transition.Slide;
-import android.transition.Transition;
-import android.transition.TransitionManager;
-import android.transition.TransitionValues;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,27 +24,19 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class StartActivity extends AppCompatActivity {
+    public boolean firstTimeHere = true;
+    public Cursor cursor;
+    int var = 0;
     private List<WorkOut> WorkOutList = new ArrayList<>();
     private RecyclerView recyclerView;
     private WorkOutAdapter wAdapter;
-    public boolean firstTimeHere = true;
-    public Cursor cursor;
-
-    int var = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

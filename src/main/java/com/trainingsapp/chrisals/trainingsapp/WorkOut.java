@@ -1,9 +1,5 @@
 package com.trainingsapp.chrisals.trainingsapp;
 
-import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-
 /**
  * Created by chris.als on 18.05.16.
  */
@@ -20,36 +16,36 @@ public class WorkOut {
 
     }
 
-    public void setLastOrNext(String state) {
-        this.lastOrNext = state;
-    }
-
-    public void setWorkName(String[] name) {
-        this.WorkName = name;
-    }
-
-    public void setWorkMax(String[] max) {
-        this.WorkMax = max;
-    }
-
-    public void setWorkoutGroup(String group) {
-        this.WorkoutGroup = group;
-    }
-
     public String getLastOrNext() {
         return lastOrNext;
+    }
+
+    public void setLastOrNext(String state) {
+        this.lastOrNext = state;
     }
 
     public String[] getWorkName() {
         return WorkName;
     }
 
+    public void setWorkName(String[] name) {
+        this.WorkName = name;
+    }
+
     public String[] getWorkMax() {
         return WorkMax;
     }
 
+    public void setWorkMax(String[] max) {
+        this.WorkMax = max;
+    }
+
     public String getWorkoutGroup() {
         return WorkoutGroup;
+    }
+
+    public void setWorkoutGroup(String group) {
+        this.WorkoutGroup = group;
     }
 }
 

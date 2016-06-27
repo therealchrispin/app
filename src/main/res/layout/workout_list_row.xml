@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:focusable="true"
-    android:clickable="true"
     android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
     android:orientation="vertical"
     card_view:cardElevation="2dp"
     card_view:cardUseCompatPadding="true"
@@ -19,28 +19,28 @@
         android:padding="10dp">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/lastOrNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="#000000" />
+            android:textStyle="bold" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/WorkoutName"
-            android:textSize="20sp"
-            android:textColor="#000000" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
 
         <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
             android:id="@+id/exercise1"
-            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,34 +49,34 @@
 
 
             <TextView
-                android:layout_height="wrap_content"
                 android:layout_width="0dp"
-                android:text="3 x 5 x "
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="right" />
+                android:gravity="right"
+                android:text="3 x 5 x " />
 
             <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="0dp"
                 android:id="@+id/exercise1Max"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="0.4"
                 android:textAlignment="center" />
 
             <TextView
-                android:layout_height="wrap_content"
                 android:layout_width="0dp"
-                android:text="Kg"
-                android:layout_weight="1" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Kg" />
 
         </LinearLayout>
 
         <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:textStyle="bold"
             android:id="@+id/exercise2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:textSize="16dp"
-            android:layout_weight="1" />
+            android:textStyle="bold" />
 
 
         <LinearLayout
@@ -86,34 +86,34 @@
 
 
             <TextView
-                android:layout_height="wrap_content"
                 android:layout_width="0dp"
-                android:text="3 x 5 x "
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="right" />
+                android:gravity="right"
+                android:text="3 x 5 x " />
 
             <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="0dp"
                 android:id="@+id/exercise2Max"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="0.4"
                 android:textAlignment="center" />
 
             <TextView
-                android:layout_height="wrap_content"
                 android:layout_width="0dp"
-                android:text="Kg"
-                android:layout_weight="1" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Kg" />
 
         </LinearLayout>
 
         <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:textStyle="bold"
             android:id="@+id/exercise3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="16dp" />
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -122,26 +122,26 @@
 
 
             <TextView
-                android:layout_height="wrap_content"
                 android:layout_width="0dp"
-                android:text="1 x 5 x "
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="right" />
+                android:gravity="right"
+                android:text="1 x 5 x " />
 
             <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="0dp"
                 android:id="@+id/exercise3Max"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="0.4"
                 android:textAlignment="center"
 
                 />
 
             <TextView
-                android:layout_height="wrap_content"
                 android:layout_width="0dp"
-                android:text="Kg"
-                android:layout_weight="1" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Kg" />
         </LinearLayout>
     </LinearLayout>
 

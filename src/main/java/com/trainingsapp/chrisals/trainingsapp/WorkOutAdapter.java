@@ -10,36 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.sql.RowId;
 import java.util.List;
 
 
 public class WorkOutAdapter extends RecyclerView.Adapter<WorkOutAdapter.MyViewHolder> {
 
     private List<WorkOut> WorkOutList;
-
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView WloN, Wex1, Wex2, Wex3, Wmax1, Wmax2, Wmax3, Wgroup;
-
-        public MyViewHolder(View view) {
-            super(view);
-
-            WloN = (TextView) view.findViewById(R.id.lastOrNext);
-
-            Wgroup = (TextView) view.findViewById(R.id.WorkoutName);
-
-            Wex1 = (TextView) view.findViewById(R.id.exercise1);
-            Wex2 = (TextView) view.findViewById(R.id.exercise2);
-            Wex3 = (TextView) view.findViewById(R.id.exercise3);
-
-            Wmax1 = (TextView) view.findViewById(R.id.exercise1Max);
-            Wmax2 = (TextView) view.findViewById(R.id.exercise2Max);
-            Wmax3 = (TextView) view.findViewById(R.id.exercise3Max);
-
-
-        }
-
-    }
 
     public WorkOutAdapter(List<WorkOut> workOutList) {
         this.WorkOutList = workOutList;
@@ -76,10 +52,32 @@ public class WorkOutAdapter extends RecyclerView.Adapter<WorkOutAdapter.MyViewHo
 
     }
 
-
     @Override
     public int getItemCount() {
         return WorkOutList.size();
+
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        public TextView WloN, Wex1, Wex2, Wex3, Wmax1, Wmax2, Wmax3, Wgroup;
+
+        public MyViewHolder(View view) {
+            super(view);
+
+            WloN = (TextView) view.findViewById(R.id.lastOrNext);
+
+            Wgroup = (TextView) view.findViewById(R.id.WorkoutName);
+
+            Wex1 = (TextView) view.findViewById(R.id.exercise1);
+            Wex2 = (TextView) view.findViewById(R.id.exercise2);
+            Wex3 = (TextView) view.findViewById(R.id.exercise3);
+
+            Wmax1 = (TextView) view.findViewById(R.id.exercise1Max);
+            Wmax2 = (TextView) view.findViewById(R.id.exercise2Max);
+            Wmax3 = (TextView) view.findViewById(R.id.exercise3Max);
+
+
+        }
 
     }
 

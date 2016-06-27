@@ -1,31 +1,17 @@
 package com.trainingsapp.chrisals.trainingsapp;
 
-import android.animation.Animator;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
-
-import android.view.ViewAnimationUtils;
-import android.view.ViewGroup;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.widget.Adapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class DisplayMessageActivity extends AppCompatActivity {
     Double[] extraMessageDoubleArray = new Double[3];
@@ -320,11 +306,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
         textV1[1] = Integer.valueOf(reps2.getText().toString());
         textV1[2] = Integer.valueOf(reps3.getText().toString());
 
-        if (textV1[0] == 5 && textV1[1] == 5 && textV1[2] == 5) {
-            didYouLift = true;
-        } else {
-            didYouLift = false;
-        }
+        didYouLift = textV1[0] == 5 && textV1[1] == 5 && textV1[2] == 5;
 
         return didYouLift;
     }

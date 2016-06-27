@@ -1,15 +1,12 @@
 package com.trainingsapp.chrisals.trainingsapp;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.inputmethodservice.Keyboard;
 
-import java.util.Date;
-
-import static com.trainingsapp.chrisals.trainingsapp.DBHelper.*;
+import static com.trainingsapp.chrisals.trainingsapp.DBHelper.CREATE_ENTRY;
+import static com.trainingsapp.chrisals.trainingsapp.DBHelper.CREATE_VAR_ENTRY;
+import static com.trainingsapp.chrisals.trainingsapp.DBHelper.CREATE_VAR_ENTRY_2;
 
 /**
  * Created by chris.als on 27.04.16.

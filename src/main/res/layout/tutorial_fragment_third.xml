@@ -15,9 +15,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="Unleash"
             android:background="@color/white"
-            android:onClick="dosomemoreshit" />
+            android:onClick="dosomemoreshit"
+            android:text="Unleash" />
     </LinearLayout>
 
 </ScrollView>
