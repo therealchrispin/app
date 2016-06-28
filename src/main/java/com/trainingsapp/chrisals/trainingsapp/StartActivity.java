@@ -27,6 +27,11 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,9 +57,18 @@ public class StartActivity extends AppCompatActivity {
         recyclerView.setAdapter(wAdapter);
         wAdapter.notifyDataSetChanged();
 
+
+        MobileAds.initialize(getApplicationContext(), "ca-app-pub-5904598690242837/6281852308");
+
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.setAdSize(AdSize.SMART_BANNER);
+        mAdView.setAdUnitId("ca-app-pub-5904598690242837/6281852308");
+        mAdView.loadAd(adRequest);
+
+
+
         FloatingActionButton fab1 = (FloatingActionButton) findViewById(R.id.fab1);
-
-
         fab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

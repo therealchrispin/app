@@ -60,7 +60,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
     }
 
     private void requestNewIntersitial() {
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice("112AFAFDA5E50327A89370BD3EB488E9").build();
+        AdRequest adRequest = new AdRequest.Builder().build();
 
         mInterstitialAd.loadAd(adRequest);
 
@@ -378,6 +378,8 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
     public void test(View view) {
 
+        exes[index] = successfulWorkout();
+
         TextView[] t1 = {
                 (TextView) findViewById(R.id.textReps1),
                 (TextView) findViewById(R.id.textReps2),
@@ -387,7 +389,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
         for (int i = 0; i < t1.length; ++i) {
             t1[i].setText("5");
         }
-        exes[index] = successfulWorkout();
+
 
         if (index < extraMessageDoubleArray.length - 1) {
             index++;
@@ -409,7 +411,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
     }
 
     public void goToStart() {
-
+        Intent intent = new Intent(this,StartActivity.class);
 
         SQLiteDatabase db = getDB();
 
@@ -418,6 +420,8 @@ public class DisplayMessageActivity extends AppCompatActivity {
         long newRow;
         newRow = db.insert(DBHelper.Datenbank.TABLE_NAME, null, values);
         exes = new boolean[exes.length];
+
+        startActivity(intent);
 
     }
 
