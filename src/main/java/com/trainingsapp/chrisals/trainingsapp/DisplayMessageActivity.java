@@ -22,8 +22,6 @@ public class DisplayMessageActivity extends AppCompatActivity {
     Double[] extraMessageDoubleArray = new Double[3];
     int index = 0;
     boolean[] exes = new boolean[3];
-    Intent intent = getIntent();
-
     InterstitialAd mInterstitialAd;
 
 
@@ -32,18 +30,14 @@ public class DisplayMessageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_message);
 
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 test(view);
-
             }
         });
-
-
 
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId(getResources().getString(R.string.banner_ad_unit_id));
@@ -60,14 +54,18 @@ public class DisplayMessageActivity extends AppCompatActivity {
         startTraining();
     }
 
-    private void requestNewIntersitial(){
-        AdRequest adRequest = new AdRequest.Builder().build();
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    private void requestNewIntersitial() {
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice("112AFAFDA5E50327A89370BD3EB488E9").build();
 
         mInterstitialAd.loadAd(adRequest);
 
 
     }
-
 
     public SQLiteDatabase getDB() {
         DB helfer = new DB(this);
@@ -402,14 +400,16 @@ public class DisplayMessageActivity extends AppCompatActivity {
             }
             startTraining();
         } else {
-            mInterstitialAd.show();
+            if (mInterstitialAd.isLoaded()) {
+                mInterstitialAd.show();
+                goToStart();
+                finish();
+            }
         }
     }
 
+    public void goToStart() {
 
-
-    public void goToStart(){
-        Intent intent = new Intent(this, StartActivity.class);
 
         SQLiteDatabase db = getDB();
 
@@ -418,7 +418,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
         long newRow;
         newRow = db.insert(DBHelper.Datenbank.TABLE_NAME, null, values);
         exes = new boolean[exes.length];
-        startActivity(intent);
+
     }
 
     public void prepareWarmUp(View view) {
@@ -443,9 +443,5 @@ public class DisplayMessageActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
 }
 
