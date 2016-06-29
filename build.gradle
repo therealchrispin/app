@@ -5,7 +5,7 @@ android {
         config {
             keyAlias 'key'
             keyPassword 'kingkong'
-            storeFile file('/Users/chrisals/Desktop/app/key.jks')
+            storeFile file('/Users/chrisals/Downloads/app/key.jks')
             storePassword 'kingkong'
         }
         config1 {
@@ -19,8 +19,8 @@ android {
         applicationId "com.trainingsapp.chrisals.trainingsapp"
         minSdkVersion 21
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
         signingConfig signingConfigs.config
     }
     buildTypes {
