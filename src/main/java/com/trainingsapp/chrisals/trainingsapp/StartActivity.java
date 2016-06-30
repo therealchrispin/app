@@ -215,7 +215,7 @@ public class StartActivity extends AppCompatActivity {
 
 
     public void dosome(View view) {
-        Intent intent1 = new Intent(this, ShowWorkOutActivity.class);
+        Intent intent1 = new Intent(this, ShowWorkOutFragmentsActivity.class);
         Intent intent = new Intent(this, StartActivity.class);
 
         if (cursor != null && cursor.getCount() > 0) {

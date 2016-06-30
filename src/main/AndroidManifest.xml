@@ -40,13 +40,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".OverViewWorkOutActivity"
-            android:label="@string/title_activity_over_view_work_out"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".ShowWorkOutFragmentsActivity"
             android:label="@string/title_activity_show_work_out_fragments"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
