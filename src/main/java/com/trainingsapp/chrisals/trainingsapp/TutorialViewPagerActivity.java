@@ -30,6 +30,8 @@ public class TutorialViewPagerActivity extends FragmentActivity {
         tAdapter = new TutorialViewPagerAdapter(getSupportFragmentManager());
         tPager.setAdapter(tAdapter);
 
+
+
         final RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         radioGroup.check(radioGroup.getChildAt(0).getId());
         radioGroup.getChildAt(0).setScaleX((float) 1.3);

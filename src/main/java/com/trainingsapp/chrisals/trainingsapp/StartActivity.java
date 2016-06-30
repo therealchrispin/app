@@ -26,6 +26,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
@@ -48,6 +49,7 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
+
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
         wAdapter = new WorkOutAdapter(WorkOutList);
@@ -62,11 +64,7 @@ public class StartActivity extends AppCompatActivity {
 
         AdView mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.setAdSize(AdSize.SMART_BANNER);
-        mAdView.setAdUnitId("ca-app-pub-5904598690242837/6281852308");
         mAdView.loadAd(adRequest);
-
-
 
         FloatingActionButton fab1 = (FloatingActionButton) findViewById(R.id.fab1);
         fab1.setOnClickListener(new View.OnClickListener() {
@@ -217,11 +215,12 @@ public class StartActivity extends AppCompatActivity {
 
 
     public void dosome(View view) {
-        Intent intent1 = new Intent(this, DisplayMessageActivity.class);
+        Intent intent1 = new Intent(this, ShowWorkOutActivity.class);
         Intent intent = new Intent(this, StartActivity.class);
 
         if (cursor != null && cursor.getCount() > 0) {
             startActivity(intent1);
+            finish();
 
         } else {
             // previously invisible view
@@ -434,11 +433,4 @@ public class StartActivity extends AppCompatActivity {
         }
 
     }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
 }
-
-

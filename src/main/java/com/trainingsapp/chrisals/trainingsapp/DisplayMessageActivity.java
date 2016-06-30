@@ -13,6 +13,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -402,11 +403,13 @@ public class DisplayMessageActivity extends AppCompatActivity {
             }
             startTraining();
         } else {
-            if (mInterstitialAd.isLoaded()) {
+            if (mInterstitialAd.isLoaded()==true) {
+                Toast t = new Toast(this);
+                t.makeText(this, "WAZUUUUUUUUUUUP",Toast.LENGTH_LONG);
                 mInterstitialAd.show();
-                goToStart();
-                finish();
             }
+            goToStart();
+            finish();
         }
     }
 

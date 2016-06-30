@@ -20,6 +20,10 @@
 
     <string name="banner_ad_unit_id">ca-app-pub-5904598690242837/1572451108</string>
     <string name="banner_ad_unit_2">ca-app-pub-5904598690242837/6281852308</string>
+    <string name="title_activity_show_work_out">ShowWorkOutActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_over_view_work_out">OverViewWorkOutActivity</string>
+    <string name="title_activity_show_work_out_fragments">ShowWorkOutFragmentsActivity</string>
 
 
 </resources>
